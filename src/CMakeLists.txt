@@ -1,6 +1,6 @@
 set(RTT_DIR ${CMAKE_CURRENT_SOURCE_DIR}/SEGGER_RTT_V768c)
 
-add_library(jlink_rtt STATIC ${RTT_DIR}/RTT/SEGGER_RTT.c ${RTT_DIR}/RTT/SEGGER_RTT_printf.c)
+add_library(jlink_rtt STATIC ${RTT_DIR}/RTT/SEGGER_RTT.c ${RTT_DIR}/RTT/SEGGER_SYSVIEW.c ${RTT_DIR}/RTT/SEGGER_RTT_printf.c)
 
 target_include_directories(jlink_rtt PUBLIC ${RTT_DIR}/RTT)
 

@@ -62,8 +62,26 @@ Revision: $Rev: 26230 $
 **********************************************************************
 */
 
-#include "SEGGER_SYSVIEW_Conf.h"
-#include "SEGGER_RTT_Conf.h"
+#if defined __has_include
+#  if __has_include (<SEGGER_SYSVIEW_Conf.h>)
+#    include <SEGGER_SYSVIEW_Conf.h>
+#  else
+#    include "../Config/SEGGER_SYSVIEW_Conf.h" // Fall back to use defaults provided by SEGGER
+#  endif
+#else
+#  include <SEGGER_SYSVIEW_Conf.h> // If the compiler doesn't support __has include, just assume that SEGGER_SYSVIEW_Conf is reachable by the library
+#endif
+
+#if defined __has_include
+#  if __has_include (<SEGGER_RTT_Conf.h>)
+#    include <SEGGER_RTT_Conf.h>
+#  else
+#    include "../Config/SEGGER_RTT_Conf.h" // Fall back to use defaults provided by SEGGER
+#  endif
+#else
+#  include <SEGGER_RTT_Conf.h> // If the compiler doesn't support __has include, just assume that SEGGER_RTT_Conf is reachable by the library
+#endif
+
 
 #ifdef __cplusplus
 extern "C" {

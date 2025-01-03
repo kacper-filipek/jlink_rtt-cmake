@@ -64,6 +64,7 @@ Revision: $Rev: 28768 $
 #include "SEGGER.h"
 #include "SEGGER_SYSVIEW_ConfDefaults.h"
 
+
 #ifdef __cplusplus
 extern "C" {
 #endif
